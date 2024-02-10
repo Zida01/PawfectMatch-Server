@@ -163,6 +163,7 @@ exports.logout = (req, res, next) => {
         req.session.destroy()
         res.clearCookie('connect.sid')
         res.clearCookie('token')
+        res.cookie('token', '')
         return res.json({ msg: 'logging you out' })
     } else {
         return res.json({ msg: 'no user to log out!' })

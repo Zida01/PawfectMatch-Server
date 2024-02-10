@@ -163,7 +163,7 @@ exports.logout = (req, res, next) => {
         req.session.destroy()
         res.clearCookie('connect.sid')
         res.clearCookie('token')
-        res.cookie("token", 'no cookies', {
+        res.cookie("token", ' ', {
             httpOnly: true,
             secure: true,
             sameSite: 'None',

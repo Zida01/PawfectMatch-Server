@@ -100,8 +100,11 @@ exports.login = async (req, res, next) => {
 
             res.cookie("token", token, {
                 httpOnly: true,
+                secure: true,
+                sameSite: 'strict',
+
             })
-            console.log()
+
             // return res.status(201).json({ "UserDetails": user, "Database User": User })
             return res.status(201).json({ emailId: User._id, mail: User.email, usertype: User.userType })
 

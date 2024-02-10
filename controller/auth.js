@@ -99,9 +99,9 @@ exports.login = async (req, res, next) => {
             if (!token) return res.status(403).json({ status: 'failed', message: ' error creating user token' })
 
             res.cookie("token", token, {
-                httpOnly: true,
+                httpOnly: false,
                 secure: true,
-                sameSite: 'strict',
+                sameSite: 'None',
 
             })
 

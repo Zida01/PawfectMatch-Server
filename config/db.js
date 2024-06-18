@@ -9,6 +9,10 @@ const connectdb = async () => {
             //useNewUrlParser: false,
             //useUnifiedTopology: false,
             //useFindAndModify: false
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+         serverSelectionTimeoutMS: 30000,
+        socketTimeoutMS: 45000,
         });
         console.log(" db connected");
     } catch (error) {
